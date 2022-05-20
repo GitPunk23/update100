@@ -14,29 +14,29 @@ Update100 is a python and bash script used to automate updating your progress du
 3. Open both update100.py and update100.sh in your preferred text editor
 ### update100.py
 1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. For example: ```/home/user/code/100-days-of-code/logfile.md``` \
-   ![Variable to hold filepath for log file](./resources/images/filePath)
+   ![Variable to hold filepath for log file](/resources/images/filePath.PNG)
 2. Go to lines 66 - 69 and enter your twitter developer app's:
    * Consumer (API) key
    * Consumer secret (API secret) key
    * Access Token
    * Access Secret Token \
-    ![Variable to hold keys and tokens](./resources/images/client)
+    ![Variable to hold keys and tokens](/resources/images/client.PNG)
 3. **OPTIONAL** Go to line 7 and enter a desired number of characters to read from your log file and place into the body of the tweet. Default: 200. \
-   ![Variable to hold desired characters](./resources/images/bodyLimit)
+   ![Variable to hold desired characters](/resources/images/bodyLimit.PNG)
 4. **OPTIONAL** Go to line 61 and enter a desired string for the format of your tweet. Default: \
     Day x/100
 
     [body of tweet]
 
     #100DaysOfCode \
-    ![Variable to hold string to tweet](./resources/images/tweetString)
+    ![Variable to hold string to tweet](/resources/images/tweetString.PNG)
 5. Save and close update100.py
 
 ### update100.sh
 1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. For example: ```/home/user/code/100-days-of-code/logfile.md``` \
-   ![Variable to hold filepath for log file](./resources/images/filePath2)
+   ![Variable to hold filepath for log file](/resources/images/filePath2.PNG)
 2. Go to line 7 and enter the file path for update100.py. For example: ```/home/user/code/100-days-of-code/update100.py``` \
-   ![Variable to hold filepath for update100.py](./resources/images/filePath3)
+   ![Variable to hold filepath for update100.py](/resources/images/filePath3.PNG)
 3. Save and close update100.sh
 ## Usage
 ### update100.py

@@ -32,6 +32,17 @@ for line in lines:
         i += 1
         latestUpdateLine = lineNumber
 
+# Gets accurate Day #
+dayNO = ''
+lastDigit = False
+for char in lines[latestUpdateLine - 1]:
+    if char >= '0' and char <= '9':
+        dayNO = dayNO + char
+        lastDigit = True
+        continue
+    if char.isspace and lastDigit == True:
+        break
+
 # Sets the latest update line to the line after the last heading
 try:
     updateLine = lines[latestUpdateLine]
@@ -58,7 +69,7 @@ else:
 file.close()    
 
 # - - - - - ENTER STRING TO POST TO TWITTER - - - - -
-tweetString = "Day " + str(i) + "/100" + "\n\n" + updateString + "\n" + "#100DaysofCode"
+tweetString = "Day " + dayNO + "/100" + "\n\n" + updateString + "\n" + "#100DaysofCode"
 
 # Create twitter client
 try:

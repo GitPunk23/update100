@@ -13,30 +13,56 @@ Update100 is a python and bash script used to automate updating your progress du
 2. Download update100.sh and save it within your filesystem
 3. Open both update100.py and update100.sh in your preferred text editor
 ### update100.py
-1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. For example: ```/home/user/code/100-days-of-code/logfile.md``` \
-   ![Variable to hold filepath for log file](/resources/images/filePath.PNG)
-2. Go to lines 66 - 69 and enter your twitter developer app's:
-   * Consumer (API) key
-   * Consumer secret (API secret) key
-   * Access Token
-   * Access Secret Token \
-    ![Variable to hold keys and tokens](/resources/images/client.PNG)
-3. **OPTIONAL** Go to line 7 and enter a desired number of characters to read from your log file and place into the body of the tweet. Default: 200. \
-   ![Variable to hold desired characters](/resources/images/bodyLimit.PNG)
-4. **OPTIONAL** Go to line 61 and enter a desired string for the format of your tweet. Default: \
-    Day x/100
+1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. 
 
-    [body of tweet]
+```
+# - - - - - ENTER PATH OF FILE TO READ IN - - - - -
+filePath = ""
+```
+   
+2. Go to lines 72 - 76 and enter your twitter developer tokens:
 
-    #100DaysOfCode \
-    ![Variable to hold string to tweet](/resources/images/tweetString.PNG)
-5. Save and close update100.py
+```
+   # Create twitter client
+try:
+    consumer_key=""
+    consumer_secret=""
+    access_token=""
+    access_token_secret=""
+```
+  
+**OPTIONAL** Go to line 69 and enter a desired string for the format of your tweet. 
+   
+```
+   # - - - - - ENTER STRING TO POST TO TWITTER - - - - -
+tweetString = "Day " + dayNO + "/100" + "\n\n" + updateString + "\n" + "#100DaysofCode"
+
+
+Looks Like:
+Day x/100
+
+[body of tweet]
+
+#100DaysOfCode 
+```
+   
+3. Save and close update100.py
 
 ### update100.sh
-1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. For example: ```/home/user/code/100-days-of-code/logfile.md``` \
-   ![Variable to hold filepath for log file](/resources/images/filePath2.PNG)
-2. Go to line 7 and enter the file path for update100.py. For example: ```/home/user/code/100-days-of-code/update100.py``` \
-   ![Variable to hold filepath for update100.py](/resources/images/filePath3.PNG)
+1. Go to line 4 and enter the file path for the file you are reading in. This would be whatever file you are using to log your daily progress. 
+
+```
+# - - - - - ENTER FILEPATH TO LOG FILE - - - - -
+logFilePath=
+```
+  
+2. Go to line 7 and enter the file path for update100.py. 
+
+```
+# - - - - - ENTER FILEPATH TO UPDATE100.PY - - - - -
+update100Path=
+```
+   
 3. Save and close update100.sh
 ## Usage
 ### update100.py
@@ -48,7 +74,7 @@ Run the script by using the python3 command with the path to where you saved upd
 python3 [path/to/file]
 ```
 
-TL;DR: Whatever you are sending to tweet must come directly after the line titling the day. The number of characters read in can be changed by a variable, the default is 200. Example:
+TL;DR: Whatever you are sending to tweet must come directly after the line titling the day. The number of characters read in can be changed but the default is 200. Example:
 
 ```
 # Day 15
